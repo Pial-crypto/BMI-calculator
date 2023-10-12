@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="@drawable/nmbr"
+    android:gravity="center"
+    android:layout_centerInParent="true"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/newgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="145dp"
+        android:backgroundTint="#9C1E1E"
+        android:text="New Game"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newgame"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="27dp"
+
+        android:backgroundTint="@color/black"
+        android:enabled="false"
+        android:text="Generate"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/generated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/generate"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:text="Random number generated"
+        />
+
+    <EditText
+        android:id="@+id/Guess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/generated"
+        android:layout_marginTop="91dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="Guess the number 1-10"
+        android:enabled="false"
+        android:visibility="invisible"
+        android:inputType="number"
+        android:textColorHint="@color/purple_700"
+        android:textSize="30sp" />
+    <Button
+        android:id="@+id/taken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Guess"
+        android:text="Taken"
+        android:textColorHint="@color/black"
+        android:textColor="#931111"
+        android:textAllCaps="false"
+        android:layout_marginLeft="155dp"
+        android:backgroundTint="@color/white"
+        android:visibility="invisible"
+        android:enabled="false"
+        />
+
+
+
+</RelativeLayout>
