@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "780339052064",
+    "project_id": "testing-b8c7c",
+    "storage_bucket": "testing-b8c7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780339052064:android:7cdca416fffb9fa9e10645",
+        "android_client_info": {
+          "package_name": "com.hassanpial.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780339052064-neu7g2sufsa3cnc7ip7n1o2o96dv9paa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hassanpial.myapplication",
+            "certificate_hash": "dccced807b2ff9da9c14be8b85ba294a4bfebc23"
+          }
+        },
+        {
+          "client_id": "780339052064-igumqbibh3kddi7ncaj6quccoekaonrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6nKUSFcu3sPEl73r1gwIQtNrtgQ5NnQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780339052064-igumqbibh3kddi7ncaj6quccoekaonrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

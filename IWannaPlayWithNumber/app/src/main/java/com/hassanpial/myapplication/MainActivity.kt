@@ -18,73 +18,60 @@ class MainActivity : AppCompatActivity() {
     private var newgame: Button? = null
     private var taken: Button? = null
 
-private  var inputNumberText=""
-    var inputNumber=0
+    private var inputNumberText = ""
+    private var inputNumber = 0
+    private var i = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         generate = findViewById(R.id.generate)
         input = findViewById(R.id.Guess)
         generated = findViewById(R.id.generated)
         newgame = findViewById(R.id.newgame)
         taken = findViewById(R.id.taken)
-var i=1
+
         newgame?.setOnClickListener(View.OnClickListener {
-            //generate?.visibility = View.VISIBLE
-            //generate?.isEnabled = true
             startnewgame()
-             i=1
+            i = 1
         })
-//var i=0
-  //   {
 
-      taken?.setOnClickListener {
-          var remain=5-i+1
-          try {
+        taken?.setOnClickListener {
+            val remain = 5 - i + 1
+            try {
+                inputNumberText = input?.text.toString().trim()
+                inputNumber = inputNumberText.toInt()
 
-              inputNumberText = input?.text.toString().trim()
-               inputNumber = inputNumberText.toInt()
-
-              if (inputNumber < randomInt) {
-                  generated?.setText("Your guess is low.$remain chances left")
-
-                 // Toast.makeText(this, ", Toast.LENGTH_LONG).show()
-              } else if (inputNumber > randomInt) {
-                  generated?.setText("Your guess is high.$remain chances left")
-                //  Toast.makeText(this, "Your guess is too high because the number is $randomInt ", Toast.LENGTH_LONG).show()
-              } else {
-                  generated?.setText("Congratulations! You have guessed the correct number")
-                  taken?.visibility= View.INVISIBLE
-                  taken?.isEnabled=false
-                  input?.visibility=View.INVISIBLE
-                  input?.isEnabled=false
-
-
-                  //Toast.makeText(this, "Congratulations! You guessed the correct number", Toast.LENGTH_LONG).show()
-              }
-          } catch (e: NumberFormatException) {
-              Toast.makeText(this, "Invalid number entered", Toast.LENGTH_SHORT).show()
-          }
-          i++
-          if(remain==0) {
-              taken?.visibility= View.INVISIBLE
-              taken?.isEnabled=false
-              generated?.setText("No chances available.Game over.The number was $randomInt")
-              input?.isEnabled=false
-              input?.visibility=View.INVISIBLE
-
-          }
-       }
-       // i++
-       // }
+                if (inputNumber < randomInt) {
+                    generated?.text = "Your guess is low. $remain chances left"
+                } else if (inputNumber > randomInt) {
+                    generated?.text = "Your guess is high. $remain chances left"
+                } else {
+                    generated?.text = "Congratulations! You have guessed the correct number"
+                    taken?.visibility = View.INVISIBLE
+                    taken?.isEnabled = false
+                    input?.visibility = View.INVISIBLE
+                    input?.isEnabled = false
+                }
+            } catch (e: NumberFormatException) {
+                Toast.makeText(this, "Invalid number entered", Toast.LENGTH_SHORT).show()
+            }
+            i++
+            if (remain == 0) {
+                taken?.visibility = View.INVISIBLE
+                taken?.isEnabled = false
+                generated?.text = "No chances available. Game over. The number was $randomInt"
+                input?.isEnabled = false
+                input?.visibility = View.INVISIBLE
+            }
+        }
 
         generate?.setOnClickListener {
             guessRandomNumber()
         }
 
         randomInt = generateRandomInt()
-
-
     }
 
     private fun generateRandomInt(): Int {
@@ -96,46 +83,17 @@ var i=1
         generate?.visibility = View.GONE
         input?.visibility = View.VISIBLE
         input?.isEnabled = true
-        taken?.visibility=View.VISIBLE
-        taken?.isEnabled=true
-
-
-
-        if (inputNumberText.isEmpty()) {
-            //Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show()
-            //return
-        }
-/*
-        try {
-            val inputNumber = inputNumberText.toInt()
-
-            if (inputNumber < randomInt) {
-                Toast.makeText(this, "Your guess is too low because the number is $randomInt", Toast.LENGTH_LONG).show()
-            } else if (inputNumber > randomInt) {
-                Toast.makeText(this, "Your guess is too high because the number is $randomInt ", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this, "Congratulations! You guessed the correct number", Toast.LENGTH_LONG).show()
-            }
-        } catch (e: NumberFormatException) {
-            Toast.makeText(this, "Invalid number entered", Toast.LENGTH_SHORT).show()
-        }
-        */
-
+        taken?.visibility = View.VISIBLE
+        taken?.isEnabled = true
     }
-
 
     private fun startnewgame() {
         generated?.visibility = View.INVISIBLE
         generate?.visibility = View.VISIBLE
-        generated?.setText("Random number generated")
+        generated?.text = "Random number generated"
         generate?.isEnabled = true
         input?.visibility = View.INVISIBLE
         input?.isEnabled = false
         input?.text?.clear()
-        ///taken?.visibility=View.VISIBLE
-        //randomInt = generateRandomInt()
     }
-
-
-
 }
