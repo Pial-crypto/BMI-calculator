@@ -66,14 +66,27 @@
             android:hint="E-mail"
             android:textSize="25dp" />
 
-        <EditText
 
-            android:id="@+id/signinpassword"
+        <com.google.android.material.textfield.TextInputLayout
+            android:background="#3B834F4F"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:hint="Password"
-            android:textSize="25dp" />
+            android:textColorHint="@color/white"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signinpassword"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                android:inputType="textVisiblePassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
 
@@ -106,8 +119,15 @@
             app:cardBackgroundColor="@android:color/black"
             app:cardCornerRadius="30sp">
 
+            <ProgressBar
+                android:id="@+id/loginpb"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_gravity="center"/>
             <Button
-
+android:visibility="visible"
                 android:id="@+id/logintoprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

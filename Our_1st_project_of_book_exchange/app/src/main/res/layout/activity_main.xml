@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-
+    android:background="@drawable/home_page"
     tools:context=".MainActivity">
 
 
@@ -28,6 +28,7 @@
     </com.airbnb.lottie.LottieAnimationView>
 
     <LinearLayout
+        android:background="#3B834F4F"
         android:layout_width="381dp"
         android:layout_height="535dp"
         android:orientation="vertical"
@@ -55,6 +56,7 @@
                 android:layout_height="match_parent"
                 android:drawableRight="@drawable/baseline_accessibility_24"
                 android:hint="Name"
+                android:background="#3B834F4F"
                 android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
@@ -63,7 +65,7 @@
 
 
         <androidx.cardview.widget.CardView
-
+            android:background="#3B834F4F"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginTop="10dp"
@@ -73,6 +75,7 @@
 
 
             <EditText
+                android:background="#3B834F4F"
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -87,6 +90,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:background="#3B834F4F"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginTop="10dp"
@@ -96,6 +100,7 @@
 
 
             <EditText
+                android:background="#3B834F4F"
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -116,16 +121,26 @@
             app:cardCornerRadius="500dp"
             app:cardElevation="250dp">
 
-
-            <EditText
-              android:id="@+id/password"
+            <com.google.android.material.textfield.TextInputLayout
+                android:background="#3B834F4F"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableRight="@drawable/baseline_password_24"
                 android:hint="Password"
-                android:inputType="textVisiblePassword"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/white"
+                app:passwordToggleEnabled="true">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:inputType="textVisiblePassword"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -138,21 +153,30 @@
             app:cardCornerRadius="500dp"
             app:cardElevation="250dp">
 
-
-            <EditText
+<com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:hint="Confirm password"
+    android:textColorHint="@color/white"
+    app:passwordToggleEnabled="true">
+           <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password"
+               android:background="#3B834F4F"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableRight="@drawable/baseline_password_24"
-                android:hint="Confirm password"
+
+
                 android:inputType="textVisiblePassword"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
+
+</com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
 
         <CheckBox
+            android:textColor="@color/black"
             android:id="@+id/agreed_cb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -173,7 +197,7 @@
 
             <ProgressBar
                 android:id="@+id/pb"
-
+android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:indeterminateTint="@color/white"

@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+
+
+<androidx.drawerlayout.widget.DrawerLayout
+
+    android:id="@+id/dl"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/cardview_dark_background"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loggedin_home_page">
+
+    <LinearLayout
+
+        android:id="@+id/mainll"
+        android:orientation="vertical"
+android:background="@color/teal_200"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:background="@color/black"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/nav_toolbar"
+            />
+
+
 
 <LinearLayout
     android:weightSum="3"
@@ -15,7 +40,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <ImageView    android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:layout_weight="1"
         android:layout_margin="30sp"
         android:layout_width="wrap_content"
@@ -25,6 +51,10 @@
 
 
     <ImageView
+        android:clickable="true"
+        android:id="@+id/message"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:layout_weight="1"
         android:layout_margin="30sp"
         android:layout_width="wrap_content"
@@ -33,7 +63,10 @@
         />
 
 
-    <ImageView
+    <ImageView    android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:id="@+id/search"
         android:layout_weight="1"
         android:layout_margin="30sp"
         android:layout_width="wrap_content"
@@ -69,6 +102,8 @@
         android:weightSum="3">
 
         <TextView
+            android:id="@+id/newrecruit"
+            android:clickable="true"
             style="@style/Theme.Material3.Dark"
             android:layout_width="135dp"
             android:layout_height="103dp"
@@ -132,9 +167,6 @@ android:textSize="20dp"
     </LinearLayout>
 
     </LinearLayout>
-
-
-    
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -197,6 +229,7 @@ android:textSize="20dp"
                 android:layout_width="160dp">
 
                 <Button
+                    android:id="@+id/sell_faster"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -215,6 +248,7 @@ android:textSize="20dp"
                 android:layout_width="160dp">
 
                 <Button
+                    android:id="@+id/exchange_book"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -241,4 +275,25 @@ android:textSize="20dp"
 
     </LinearLayout>
 
+
+
+    
+
+
 </LinearLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+android:fitsSystemWindows="false"
+
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation"
+
+        />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
